@@ -50,7 +50,7 @@ const EditBookForm = ({ book, updateBook }) => {
           <Field name="publicationDate" type="date" className="input" />
           <ErrorMessage name="publicationDate" component="div" className="error" />
         </div>
-        <button type="submit" className="btn">Update Book</button>
+        <button type="submit" className="add">Update Book</button>
       </Form>
     </Formik>
   );

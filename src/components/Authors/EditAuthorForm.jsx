@@ -43,7 +43,7 @@ const EditAuthorForm = ({ author, updateAuthor }) => {
           <Field name="biography" as="textarea" className="input" />
           <ErrorMessage name="biography" component="div" className="error" />
         </div>
-        <button type="submit" className="btn">Update Author</button>
+        <button type="submit" className="add">Update Author</button>
       </Form>
     </Formik>
   );
