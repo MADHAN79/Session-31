@@ -3,7 +3,7 @@ import React from 'react';
 
 const AuthorTable = ({ authors, onEdit, onDelete }) => {
   return (
-    <table className="table-auto w-full mt-4">
+    <table className="authortable  table-auto w-full mt-4">
       <thead>
         <tr>
           <th>Name</th>

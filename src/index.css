@@ -103,7 +103,7 @@ th,
 td {
   padding: 0.75rem;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #ddd;
   word-wrap: break-word; /* Ensure text wraps within cells */
 }
 
@@ -111,6 +111,14 @@ th {
   background-color: #f8f9fa;
   font-weight: 600;
 }
+
+.booktable th:nth-child(5){
+  width: 10%;
+}
+.authortable  th:nth-child(even){
+  width: 10%;
+}
+
 
 tr:hover {
   background-color: #f1f1f1;
@@ -133,11 +141,7 @@ tr:hover {
 @media (max-width: 768px) {
   table {
     width: 100%;
-    display: block;
-  }
-
-  thead {
-    display: none;
+    
   }
 
   tr {
@@ -146,20 +150,11 @@ tr:hover {
   }
 
   td {
-    display: block;
-    text-align: right;
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    
     padding-left: 50%;
     border: none;
   }
 
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 50%;
-    padding-left: 0.75rem;
-    font-weight: 600;
-    white-space: nowrap;
-  }
 }

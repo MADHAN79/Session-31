@@ -3,7 +3,7 @@ import React from 'react';
 
 const BookTable = ({ books, onEdit, onDelete }) => {
   return (
-    <table className="table-auto w-full mt-4">
+    <table className="booktable  table-auto w-full mt-4">
       <thead>
         <tr>
           <th>Title</th>
