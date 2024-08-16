@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 
 const EditBookForm = ({ book, updateBook }) => {
   const initialValues = {
+    id: book.id, // Include the id to identify the book uniquely
     title: book.title,
     author: book.author,
     isbn: book.isbn,

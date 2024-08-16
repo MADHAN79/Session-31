@@ -1,101 +1,165 @@
-body {
-  font-family: Arial, sans-serif;
+/* src/styles/global.css */
+
+/* Reset some default styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #3b8f8f; /* Ensure the background color covers the entire viewport */
 }
 
+/* Basic styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+}
+
+/* Container */
 .container {
-  max-width: 1200px; /* Ensure the max width of the container */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-.form-container,
-.table-container {
-  display: flex;
-  flex-direction: column;
+/* Dashboard layout */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
+/* Forms */
 .form-container {
-  width: 100%;
-  max-width: 400px; /* Set a max width for the form */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
 }
 
-.table-container {
-  overflow-x: auto; /* Prevent horizontal scrolling on small screens */
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.input {
+label {
   display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.input,
+textarea {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
+  padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .error {
-  color: red;
+  color: #e74c3c;
   font-size: 0.875rem;
 }
 
 .btn {
+  display: inline-block;
   background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
+  color: #fff;
   border: none;
   border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
   background-color: #0056b3;
 }
 
-.table-auto {
+/* Tables */
+.table-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  overflow-x: auto; /* Add horizontal scrolling for small screens */
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed; /* Ensures column widths are controlled */
 }
 
-.table-auto th,
-.table-auto td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  word-wrap: break-word;
-}
-
-.table-auto th {
-  background-color: #f2f2f2;
+th,
+td {
+  padding: 0.75rem;
   text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word; /* Ensure text wraps within cells */
 }
 
-/* Responsive Breakpoints */
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Responsive Table */
 @media (max-width: 768px) {
-  .form-container {
-    max-width: 100%; /* Ensure form takes full width on smaller screens */
+  table {
+    width: 100%;
+    display: block;
   }
 
-  .table-container {
-    margin-top: 1rem;
+  thead {
+    display: none;
   }
 
-  .table-auto th,
-  .table-auto td {
-    padding: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .btn {
-    padding: 0.5rem;
-    font-size: 0.875rem;
+  tr {
+    display: block;
+    margin-bottom: 1rem;
   }
 
-  .input {
-    padding: 0.5rem;
-    font-size: 0.875rem;
+  td {
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+    border: none;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
   }
 }

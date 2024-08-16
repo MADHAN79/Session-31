@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 
 const EditAuthorForm = ({ author, updateAuthor }) => {
   const initialValues = {
+    id: author.id, // Include id to identify the author uniquely
     name: author.name,
     birthDate: author.birthDate,
     biography: author.biography,

@@ -15,14 +15,14 @@ const BookTable = ({ books, onEdit, onDelete }) => {
       </thead>
       <tbody>
         {books.map((book) => (
-          <tr key={book.isbn}>
+          <tr key={book.id}> {/* Use id as key */}
             <td>{book.title}</td>
             <td>{book.author}</td>
             <td>{book.isbn}</td>
             <td>{book.publicationDate}</td>
             <td>
               <button onClick={() => onEdit(book)} className="btn">Edit</button>
-              <button onClick={() => onDelete(book.isbn)} className="btn ml-2">Delete</button>
+              <button onClick={() => onDelete(book.id)} className="btn ml-2">Delete</button> {/* Use id for delete */}
             </td>
           </tr>
         ))}

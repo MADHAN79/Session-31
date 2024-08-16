@@ -19,7 +19,11 @@ const AddBookForm = ({ addBook }) => {
   });
 
   const onSubmit = (values, { resetForm }) => {
-    addBook(values);
+    const newBook = {
+      ...values,
+      id: Date.now(), // Generate a unique id for the new book
+    };
+    addBook(newBook);
     resetForm();
   };
 

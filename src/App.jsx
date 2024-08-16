@@ -1,3 +1,4 @@
+// src/App.jsx
 import React, { useState } from 'react';
 import DashboardLayout from './components/Layout/DashboardLayout';
 import AddBookForm from './components/Books/AddBookForm';
@@ -6,6 +7,8 @@ import BookTable from './components/Books/BookTable';
 import AddAuthorForm from './components/Authors/AddAuthorForm';
 import EditAuthorForm from './components/Authors/EditAuthorForm';
 import AuthorTable from './components/Authors/AuthorTable';
+
+
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -16,20 +19,20 @@ const App = () => {
   const addBook = (book) => setBooks([...books, book]);
 
   const updateBook = (updatedBook) => {
-    setBooks(books.map((b) => (b.isbn === updatedBook.isbn ? updatedBook : b)));
+    setBooks(books.map((b) => (b.id === updatedBook.id ? updatedBook : b)));
     setEditingBook(null); // Reset the form after updating
   };
 
-  const deleteBook = (isbn) => setBooks(books.filter((b) => b.isbn !== isbn));
+  const deleteBook = (id) => setBooks(books.filter((b) => b.id !== id));
 
   const addAuthor = (author) => setAuthors([...authors, author]);
 
   const updateAuthor = (updatedAuthor) => {
-    setAuthors(authors.map((a) => (a.name === updatedAuthor.name ? updatedAuthor : a)));
+    setAuthors(authors.map((a) => (a.id === updatedAuthor.id ? updatedAuthor : a)));
     setEditingAuthor(null); // Reset the form after updating
   };
 
-  const deleteAuthor = (name) => setAuthors(authors.filter((a) => a.name !== name));
+  const deleteAuthor = (id) => setAuthors(authors.filter((a) => a.id !== id));
 
   return (
     <DashboardLayout>

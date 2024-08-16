@@ -17,7 +17,11 @@ const AddAuthorForm = ({ addAuthor }) => {
   });
 
   const onSubmit = (values, { resetForm }) => {
-    addAuthor(values);
+    const newAuthor = {
+      ...values,
+      id: Date.now(), // Generate a unique id for the new author
+    };
+    addAuthor(newAuthor);
     resetForm();
   };
 

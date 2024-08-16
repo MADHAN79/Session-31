@@ -14,13 +14,13 @@ const AuthorTable = ({ authors, onEdit, onDelete }) => {
       </thead>
       <tbody>
         {authors.map((author) => (
-          <tr key={author.name}>
+          <tr key={author.id}> {/* Use id as key */}
             <td>{author.name}</td>
             <td>{author.birthDate}</td>
             <td>{author.biography}</td>
             <td>
               <button onClick={() => onEdit(author)} className="btn">Edit</button>
-              <button onClick={() => onDelete(author.name)} className="btn ml-2">Delete</button>
+              <button onClick={() => onDelete(author.id)} className="btn ml-2">Delete</button> {/* Use id for delete */}
             </td>
           </tr>
         ))}
