@@ -57,6 +57,6 @@ const App = () => {
       </div>
     </DashboardLayout>
   );
-};fasf
+};
 
 export default App;
