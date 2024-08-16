@@ -19,8 +19,8 @@ const AuthorTable = ({ authors, onEdit, onDelete }) => {
             <td>{author.birthDate}</td>
             <td>{author.biography}</td>
             <td>
-              <button onClick={() => onEdit(author)} className="btn">Edit</button>
-              <button onClick={() => onDelete(author.id)} className="btn ml-2">Delete</button> {/* Use id for delete */}
+              <button onClick={() => onEdit(author)} className="edit">Edit</button>
+              <button onClick={() => onDelete(author.id)} className="delete">Delete</button> {/* Use id for delete */}
             </td>
           </tr>
         ))}

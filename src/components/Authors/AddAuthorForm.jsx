@@ -47,7 +47,7 @@ const AddAuthorForm = ({ addAuthor }) => {
           <Field name="biography" as="textarea" className="input" />
           <ErrorMessage name="biography" component="div" className="error" />
         </div>
-        <button type="submit" className="btn">Add Author</button>
+        <button type="submit" className="add">Add Author</button>
       </Form>
     </Formik>
   );

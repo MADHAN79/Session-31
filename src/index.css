@@ -28,12 +28,18 @@ body {
   gap: 1rem;
 }
 
+h2{
+  text-align: center;
+  margin-top: 10px;
+}
+
 /* Forms */
 .form-container {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2rem;
+  margin-bottom: 10px;
 }
 
 h3 {
@@ -68,19 +74,28 @@ textarea:focus {
   font-size: 0.875rem;
 }
 
-.btn {
+button {
+  width: 90px;
   display: inline-block;
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 5px;;
+  font-size: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.add:hover{
+  background-color: green;
+}
+.edit:hover, .delete:hover{
+  background-color: red;
+}
+
+button:hover {
   background-color: #0056b3;
 }
 
@@ -91,6 +106,7 @@ textarea:focus {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   overflow-x: auto; /* Add horizontal scrolling for small screens */
+  margin-bottom: 10px;
 }
 
 table {

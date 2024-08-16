@@ -54,7 +54,7 @@ const AddBookForm = ({ addBook }) => {
           <Field name="publicationDate" type="date" className="input" />
           <ErrorMessage name="publicationDate" component="div" className="error" />
         </div>
-        <button type="submit" className="btn">Add Book</button>
+        <button type="submit" className="add">Add Book</button>
       </Form>
     </Formik>
   );

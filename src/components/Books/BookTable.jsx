@@ -21,8 +21,8 @@ const BookTable = ({ books, onEdit, onDelete }) => {
             <td>{book.isbn}</td>
             <td>{book.publicationDate}</td>
             <td>
-              <button onClick={() => onEdit(book)} className="btn">Edit</button>
-              <button onClick={() => onDelete(book.id)} className="btn ml-2">Delete</button> {/* Use id for delete */}
+              <button onClick={() => onEdit(book)} className="edit">Edit</button>
+              <button onClick={() => onDelete(book.id)} className="delete">Delete</button> {/* Use id for delete */}
             </td>
           </tr>
         ))}
